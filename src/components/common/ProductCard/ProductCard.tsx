@@ -1,16 +1,9 @@
 
 import { Heart, ShoppingBag } from 'lucide-react';
 import styles from './ProductCard.module.css'
+import { Link } from 'react-router-dom';
+import type { Product } from '../../../types/Product';
 
-export interface Product
-{
-    id: number;
-    title: string;
-    price: number;
-    image: string;
-    category: string;
-    rating?: {rate: number; count: number}
-}
 
 interface ProductCardProps 
 {
@@ -23,15 +16,15 @@ interface ProductCardProps
 function ProductCard({product, onAddToCart, onToggleWishlist} : ProductCardProps)
 {
 
-    const {id, title, price, image, category, rating} = product;
+    const {id, title, price, thumbnail, category, rating} = product;
 
     return(
         <article className={styles.card}>
 
-            <a href={`/product/${id}`} className={styles.imageLink}>
+            <Link to={`/product/${id}`} className={styles.imageLink}>
                 <div className={styles.imageWrapper}>
 
-                    <img src={image} alt={title} className={styles.image} loading='lazy' />
+                    <img src={thumbnail} alt={title} className={styles.image} loading='lazy' />
 
                     <button className={styles.wishlistBtn} onClick={(e) => {
                         e.preventDefault();
@@ -41,21 +34,20 @@ function ProductCard({product, onAddToCart, onToggleWishlist} : ProductCardProps
                     </button>
 
                 </div>
-            </a>
+            </Link>
 
             <div className={styles.body}>
                 
                 <span className={styles.category}>{category}</span>
                 <h3 className={styles.title}>
-                    <a href={`/product/${id}`}>{title}</a>
+                    <Link to={`/product/${id}`}>{title}</Link>
                 </h3>
 
                 {
                     rating && (
                         <div className={styles.rating}>
                             <span className={styles.stars}>*</span>
-                            <span>{rating.rate}</span>
-                            <span className={styles.count}>({rating.count})</span>
+                            <span>{rating.toFixed(1)}</span>
                         </div>
                     )
                 }

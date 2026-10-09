@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from './Navbar.module.css'
 import { Heart, Menu, Search, ShoppingBag, User, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 
 function Navbar()
@@ -22,7 +23,7 @@ function Navbar()
                     
                 </button>
 
-                <a href="/" className={styles.logo}>NovaStore</a>
+                <Link to='/' className={styles.logo}>NovaStore</Link>
 
             </div> 
             {/* Left Side */}
@@ -30,10 +31,10 @@ function Navbar()
             {/* Nav Links */}
             <ul className={styles.links}>
 
-                <li><a href="/">Home</a></li>
-                <li><a href="/shop">Shop</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/contact">Contact</a></li>
+                <li><Link to='/'>Home</Link></li>
+                <li><Link to='/shop'>Shop</Link></li>
+                <li><Link to='/about'>About</Link></li>
+                <li><Link to='/contact'>Contact</Link></li>
 
             </ul>
             {/* Nav Links */}
@@ -45,18 +46,18 @@ function Navbar()
                     <Search size={20} />
                 </button>
 
-                <a href="/whishlist" className={styles.iconBtn} aria-label="Wishlist">
+                <Link to="/wishlist" className={styles.iconBtn} aria-label="Wishlist">
                     <Heart  size={20}/>
-                </a>
+                </Link>
 
-                <a href="/cart" className={styles.iconBtn} aria-label="Cart">
+                <Link to="/cart" className={styles.iconBtn} aria-label="Cart">
                     <ShoppingBag size={20} />
                     <span className={styles.badge}>0</span>
-                </a>
+                </Link>
 
-                <a href="/account" className={styles.iconBtn} aria-label="Account">
+                <Link to="/account" className={styles.iconBtn} aria-label="Account">
                     <User  size={20}/>
-                </a>
+                </Link>
 
             </div>
 
@@ -66,10 +67,18 @@ function Navbar()
                 isMenuOpen && (
                     <ul className={styles.mobilemenu}>
 
-                        <li><a href="/home" onClick={toggleMenu}>Home</a></li>
-                        <li><a href="/shop" onClick={toggleMenu}>Shop</a></li>
-                        <li><a href="/about" onClick={toggleMenu}>About</a></li>
-                        <li><a href="/account" onClick={toggleMenu}>Account</a></li>
+                        <li>
+                            <Link to="/home" onClick={toggleMenu}>Home</Link>
+                        </li>
+                        <li>
+                            <Link to="/shop" onClick={toggleMenu}>Shop</Link>
+                        </li>
+                        <li>
+                            <Link to="/about" onClick={toggleMenu}>About</Link>
+                        </li>
+                        <li>
+                            <Link to="/account" onClick={toggleMenu}>Account</Link>
+                        </li>
 
                     </ul>
                 )

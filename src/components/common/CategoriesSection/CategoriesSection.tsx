@@ -2,6 +2,7 @@
 import Container from '../../ui/Container'
 import CategoryCard from '../CategoryCard'
 import styles from './CategoriesSection.module.css'
+import { Link } from 'react-router-dom'
 
 
 const CATEGORIES = [
@@ -21,7 +22,7 @@ function CategoriesSection()
 
                 <div className={styles.header}>
                     <h2 className={styles.title}>Shop by category</h2>
-                    <a href='/shop' className={styles.viewAll}>View All</a>
+                    <Link to='/shop' className={styles.viewAll}>View All</Link>
                 </div>
 
                 <div className={styles.grid}>

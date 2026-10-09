@@ -1,5 +1,6 @@
 import Container from "../../ui/Container";
 import styles from './Footer.module.css'
+import { Link } from "react-router-dom";
 
 function Footer()
 {
@@ -23,9 +24,9 @@ function Footer()
                         <h4>Shop</h4>
                         <ul>
 
-                            <li><a href="/shop">All Products</a></li>
-                            <li><a href="/shop?category=electronics">Electronics</a></li>
-                            <li><a href="/shop?category=jewelery">Jewelery</a></li>
+                            <li><Link to="/shop">All Products</Link></li>
+                            <li><Link to="/shop?category=electronics">Electronics</Link></li>
+                            <li><Link to="/shop?category=jewelery">Jewelery</Link></li>
 
                         </ul>
 
@@ -35,8 +36,8 @@ function Footer()
 
                         <h4>Company</h4>
                         <ul>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><Link to="#">About</Link></li>
+                            <li><Link to="#">Contact</Link></li>
                         </ul>
 
                     </div>
@@ -45,8 +46,8 @@ function Footer()
 
                         <h4>Support</h4>
                         <ul>
-                            <li><a href="#">My Orders</a></li>
-                            <li><a href="#">Account</a></li>
+                            <li><Link to="#">My Orders</Link></li>
+                            <li><Link to="#">Account</Link></li>
                         </ul>
 
                     </div>

@@ -50,3 +50,42 @@
     gap: var(--space-3);
     justify-content: center;
 }
+
+.btnPrimary,
+.btnSecondary
+{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 52px;
+    padding-inline: var(--space-6);
+    font-size: var(--text-lg);
+    font-weight: var(--font-medium);
+    border-radius: var(--radius-md);
+    border: 1px solid transparent;
+    transition:  all var(--transition-fast);
+}
+
+.btnPrimary
+{
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.btnPrimary:hover
+{
+    background-color: var(--color-primary-hover);
+}
+
+.btnSecondary
+{
+    background-color: transparent;
+    color: var(--color-text);
+    border-color: var(--color-border);
+}
+
+.btnSecondary:hover
+{
+    background-color: var(--color-bg-subtle);
+    border-color: var(--color-gray-300);
+}

@@ -1,7 +1,7 @@
 
-import Button from '../../ui/Button';
 import Container from '../../ui/Container'
 import styles from './Hero.module.css'
+import { Link } from 'react-router-dom';
 
 function Hero()
 {
@@ -22,10 +22,10 @@ function Hero()
                     </p>
 
                     <div className={styles.actions}>
-                        <Button size='lg'>Shop Now</Button>
-                        <Button variant='secondary' size='lg'>
+                        <Link to='/shop' className={styles.btnPrimary}>Shop Now</Link>
+                        <Link to='/shop' className={styles.btnSecondary}>
                             Browse Categories
-                        </Button>
+                        </Link>
                     </div>
 
                 </div>

@@ -1,4 +1,5 @@
 import styles from './CategoryCard.module.css'
+import { Link } from 'react-router-dom';
 
 interface CategoryCardProps
 {
@@ -10,7 +11,7 @@ interface CategoryCardProps
 function CategoryCard({name, image, count} : CategoryCardProps)
 {
     return (
-        <a href={`/shop/category=${name.toLowerCase()}`} className={styles.card}>
+        <Link to={`/shop/category=${name.toLowerCase()}`} className={styles.card}>
             <div className={styles.imageWrapper}>
                 <img src={image} alt={name} className={styles.image} loading='lazy' />
             </div>
@@ -22,7 +23,7 @@ function CategoryCard({name, image, count} : CategoryCardProps)
                 }
             </div>
 
-        </a>
+        </Link>
     )
 }
 

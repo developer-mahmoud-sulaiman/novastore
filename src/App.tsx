@@ -1,14 +1,17 @@
-import CategoriesSection from './components/common/CategoriesSection/CategoriesSection'
-import Hero from './components/common/Hero'
-import RootLayout from './layouts/RootLayout'
+
+import AppRoutes from './routes/AppRoutes';
+import ScrollToTop from './routes/ScrollToTop';
+
+
+
 
 function App() {
 
   return (
-    <RootLayout>
-      <Hero />
-      <CategoriesSection />
-    </RootLayout>
+    <>
+      <ScrollToTop />
+      <AppRoutes />
+    </>
   )
 }
 

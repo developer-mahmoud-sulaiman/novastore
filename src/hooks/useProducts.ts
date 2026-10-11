@@ -1,4 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
+import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import { productsService } from "../services/Product";
 
 interface UseProductsParams
@@ -6,18 +6,24 @@ interface UseProductsParams
     limit?: number;
     skip?: number;
     search?: string;
-    sortBy?: string;
-    order?: 'asc' | 'desc';
+    sort?: string;
     category?: string
 }
+
+const PAGE_SIZE = 12
 
 
 export function useProducts(params: UseProductsParams = {})
 {
+    const {category, ...rest} = params
     return useQuery({
         queryKey: ['products', params],
-        queryFn: () => productsService.getAll(params),
-        staleTime: 1000 * 60 * 5
+        queryFn: () => 
+            category
+            ? productsService.getByCategory(category, rest)
+            : productsService.getAll(rest),
+        staleTime: 1000 * 60 * 5,
+        placeholderData: keepPreviousData
     })
 }
 
@@ -47,3 +53,5 @@ export function useCategories()
         staleTime: 1000 * 60 * 30
     })
 }
+
+export {PAGE_SIZE}

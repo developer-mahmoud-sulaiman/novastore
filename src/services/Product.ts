@@ -5,17 +5,27 @@ interface GetProductsParams
 {
     limit?: number;
     skip?: number;
-    category?: string;
     search?: string;
-    sortBy?: string;
-    order?: 'asc' | 'desc'
+    sort?: string;
 }
+
+    function parseSort(sort?: string): { sortBy?: string; order?: 'asc' | 'desc' } {
+        if (!sort) return {};
+
+        const [sortBy, order] = sort.split('-');
+
+        return {
+            sortBy,
+            order: order === 'desc' ? 'desc' : 'asc',
+        };
+    }
 
 export const productsService = 
 {
     async getAll(params: GetProductsParams = {}) : Promise<ProductResponse>
     {
-        const {limit = 12, skip = 0, search, sortBy, order} = params
+        const {limit = 12, skip = 0, search, sort} = params
+        const {sortBy, order} = parseSort(sort)
 
         if (search)
         { 
@@ -25,24 +35,19 @@ export const productsService =
             return data
         }
 
-        if (sortBy && order)
-        {
-            const {data} = await api.get<ProductResponse>('/products', {
-                params: {limit, skip, sortBy, order}
-            })
-            return data
-        }
-
+    
         const {data} = await api.get<ProductResponse>('/products', {
-            params: {limit, skip}
+            params: {limit, skip, sortBy, order}
         })
         return data
-
+        
     },
 
     async getByCategory(category: string, params: GetProductsParams = {}) : Promise<ProductResponse>
     {
-        const {limit = 12, skip = 0, sortBy, order} = params
+        const {limit = 12, skip = 0, sort} = params
+        const {sortBy, order} = parseSort(sort)
+        
         const {data} = await api.get<ProductResponse>(`/products/category/${category}`, {
             params: {limit, skip, sortBy, order}
         })

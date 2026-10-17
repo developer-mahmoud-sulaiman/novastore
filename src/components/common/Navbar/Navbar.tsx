@@ -2,6 +2,8 @@ import { useState } from "react";
 import styles from './Navbar.module.css'
 import { Heart, Menu, Search, ShoppingBag, User, X } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useCartStore, selectCartCount } from "../../../store/cartStore";
+import { useWishlistStore, selectWishlistCount } from "../../../store/wishlistStore";
 
 
 function Navbar()
@@ -10,6 +12,9 @@ function Navbar()
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     
     const toggleMenu = () => setIsMenuOpen((prev) => !prev)
+
+    const cartCount = useCartStore(selectCartCount)
+    const wishlistCount = useWishlistStore(selectWishlistCount)
 
     return(
         <nav className={styles.navbar}>
@@ -48,11 +53,25 @@ function Navbar()
 
                 <Link to="/wishlist" className={styles.iconBtn} aria-label="Wishlist">
                     <Heart  size={20}/>
+                    {
+                        wishlistCount > 0 && (
+                            <span className={styles.badge}>
+                                {wishlistCount}
+                            </span>
+                        )
+                    }
                 </Link>
 
                 <Link to="/cart" className={styles.iconBtn} aria-label="Cart">
                     <ShoppingBag size={20} />
-                    <span className={styles.badge}>0</span>
+                    {
+                        cartCount > 0 && (
+                        <span className={styles.badge}>
+                            {cartCount}
+                        </span>                            
+                        )
+                    }
+
                 </Link>
 
                 <Link to="/account" className={styles.iconBtn} aria-label="Account">

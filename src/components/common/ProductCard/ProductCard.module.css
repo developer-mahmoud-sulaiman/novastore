@@ -149,3 +149,10 @@
 {
     background-color: var(--color-primary-hover);
 }
+
+.wishlistWrap
+{
+    position: absolute;
+    top: var(--space-3);
+    right: var(--space-3);
+}

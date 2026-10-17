@@ -1,22 +1,28 @@
 
-import { Heart, ShoppingBag } from 'lucide-react';
+import { ShoppingBag } from 'lucide-react';
 import styles from './ProductCard.module.css'
 import { Link } from 'react-router-dom';
 import type { Product } from '../../../types/Product';
+import { useCartStore } from '../../../store/cartStore';
+import WishlistButton from '../WhishlistButton';
 
 
 interface ProductCardProps 
 {
     product: Product;
-    onAddToCart?: (id: number) => void;
-    onToggleWishlist?: (id: number) => void
 }
 
 
-function ProductCard({product, onAddToCart, onToggleWishlist} : ProductCardProps)
+function ProductCard({product} : ProductCardProps)
 {
 
+    const addItem = useCartStore((state) => state.addItem)
     const {id, title, price, thumbnail, category, rating} = product;
+    const handleAddToCart = (e: React.MouseEvent) => {
+        e.preventDefault()
+        addItem(product)
+    }
+
 
     return(
         <article className={styles.card}>
@@ -26,12 +32,9 @@ function ProductCard({product, onAddToCart, onToggleWishlist} : ProductCardProps
 
                     <img src={thumbnail} alt={title} className={styles.image} loading='lazy' />
 
-                    <button className={styles.wishlistBtn} onClick={(e) => {
-                        e.preventDefault();
-                        onToggleWishlist?.(id)
-                    }} aria-label='Add to wishlist'> 
-                        <Heart size={18} />
-                    </button>
+                    <div className={styles.wishlistWrap}>
+                        <WishlistButton product={product} />
+                    </div>
 
                 </div>
             </Link>
@@ -55,7 +58,7 @@ function ProductCard({product, onAddToCart, onToggleWishlist} : ProductCardProps
                 <div className={styles.footer}>
 
                     <span className={styles.price}>${price.toFixed(2)}</span>
-                    <button className={styles.addBtn} onClick={() => onAddToCart?.(id)} aria-label='Add to Cart'>
+                    <button className={styles.addBtn} onClick={handleAddToCart} aria-label='Add to Cart'>
                         <ShoppingBag size={18} />
                     </button>
 

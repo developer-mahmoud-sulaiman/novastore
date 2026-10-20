@@ -4,6 +4,7 @@ import { Heart, Menu, Search, ShoppingBag, User, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useCartStore, selectCartCount } from "../../../store/cartStore";
 import { useWishlistStore, selectWishlistCount } from "../../../store/wishlistStore";
+import { useAuthStore } from "../../../store";
 
 
 function Navbar()
@@ -15,6 +16,9 @@ function Navbar()
 
     const cartCount = useCartStore(selectCartCount)
     const wishlistCount = useWishlistStore(selectWishlistCount)
+
+    const user = useAuthStore((state) => state.user)
+    const isAuthenticated = useAuthStore((state) => state.isAuthenticated)
 
     return(
         <nav className={styles.navbar}>
@@ -74,9 +78,20 @@ function Navbar()
 
                 </Link>
 
+                {
+                    isAuthenticated && user ? (
+                                   
+                <Link to="/account" className={styles.iconBtn} aria-label="Account">
+                    <img src={user.image} alt={user.firstName} className={styles.avatar}/>
+                </Link>     
+                    ) : (
                 <Link to="/account" className={styles.iconBtn} aria-label="Account">
                     <User  size={20}/>
-                </Link>
+                </Link>                        
+                    )
+                }
+
+
 
             </div>
 

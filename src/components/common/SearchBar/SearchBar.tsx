@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { startTransition, useEffect, useState } from "react";
 import { useDebounce } from "../../../hooks";
 import styles from './SearchBar.module.css'
 import { Search, X } from "lucide-react";
@@ -18,7 +18,9 @@ function SearchBar({value, onChange, placeholder = 'Search Products...'} : Searc
     useEffect(() => {
         if (debounced !== value)
         {
-            onChange(debounced)
+            startTransition(() => {
+                onChange(debounced);
+            })
         }
     }, [debounced, value, onChange])
 

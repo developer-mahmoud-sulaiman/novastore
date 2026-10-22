@@ -15,7 +15,7 @@ function CategoryFilter({categories, value, onChange}: CategoryFilterProps)
             <button className={`${styles.chip} ${value === '' ? styles.active : ''}`} onClick={() => onChange('')}>
                     All
             </button>
-
+ 
             {
                 categories.map((cat) => (
                     <button key={cat} className={`${styles.chip} ${value === cat ? styles.active : ''}`} onClick={() => onChange(cat)}>

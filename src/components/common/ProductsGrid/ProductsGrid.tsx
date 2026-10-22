@@ -1,6 +1,7 @@
 import type { Product } from "../../../types/Product";
 import ProductCard, { ProductCardSkelton } from "../ProductCard";
 import styles from './ProductsGrid.module.css'
+import { memo } from "react";
 
 interface ProductsGridProps 
 {
@@ -54,4 +55,4 @@ function ProductsGrid({
     )
 }
 
-export default ProductsGrid 
+export default memo(ProductsGrid) 

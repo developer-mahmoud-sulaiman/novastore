@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import type { Product } from '../../../types/Product';
 import { useCartStore } from '../../../store/cartStore';
 import WishlistButton from '../WhishlistButton';
+import { memo } from 'react';
 
 
 interface ProductCardProps 
@@ -30,7 +31,7 @@ function ProductCard({product} : ProductCardProps)
             <Link to={`/product/${id}`} className={styles.imageLink}>
                 <div className={styles.imageWrapper}>
 
-                    <img src={thumbnail} alt={title} className={styles.image} loading='lazy' />
+                    <img src={thumbnail} alt={title} className={styles.image} loading='lazy' decoding='async' />
 
                     <div className={styles.wishlistWrap}>
                         <WishlistButton product={product} />
@@ -74,4 +75,4 @@ function ProductCard({product} : ProductCardProps)
 
 }
 
-export default ProductCard
+export default memo(ProductCard)

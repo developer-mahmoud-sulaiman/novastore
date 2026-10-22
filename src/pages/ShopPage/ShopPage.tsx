@@ -1,3 +1,4 @@
+import { useCallback, useMemo } from "react";
 import ActiveFilters from "../../components/common/ActiveFilters";
 import CategoryFilter from "../../components/common/CategoryFilter";
 import Pagination from "../../components/common/Pagination";
@@ -27,9 +28,16 @@ function ShopPage()
 
     const products = data?.products ?? []
     const total = data?.total ?? 0
-    const totalPages = Math.ceil(total / PAGE_SIZE)
+    const totalPages = useMemo(() => Math.ceil(total / PAGE_SIZE), [total])
 
     const categoryNames = categoriesData?.map((c) => c.slug) ?? []
+
+    const handlePageChange = useCallback(
+        (page: number) => {
+                setFilters({page}, false);
+                window.scrollTo({top: 0, behavior: "smooth"})
+        }, [setFilters]
+    )
 
     return(
         <Container>
@@ -72,10 +80,7 @@ function ShopPage()
 
             {
                 !isLoading && products.length > 0 && (
-                    <Pagination currentPage={filters.page} totalPages={totalPages} onPageChange={(page) => {
-                        setFilters({page}, false);
-                        window.scrollTo({top: 0, behavior: "smooth"})
-                    }} />
+                    <Pagination currentPage={filters.page} totalPages={totalPages} onPageChange={handlePageChange} />
                 )
             }
 

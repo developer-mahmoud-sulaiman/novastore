@@ -1,5 +1,6 @@
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import styles from './Pagination.module.css'
+import { memo } from 'react';
 
 interface PaginationProps 
 {
@@ -60,4 +61,4 @@ function Pagination({currentPage, totalPages, onPageChange}: PaginationProps)
     )
 }
 
-export default Pagination
+export default memo(Pagination)

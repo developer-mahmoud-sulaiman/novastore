@@ -1,97 +1,106 @@
-#  NovaStore
+# NovaStore
 
-A modern, production-ready e-commerce storefront built with React, TypeScript, and Vite.
+NovaStore is an e-commerce web application built with React and TypeScript. It includes product browsing, search and filtering, a shopping cart, a wishlist, checkout, and order management.
 
-** Live Demo:** [novastore.vercel.app](https://novastore.vercel.app)
+**Live Demo:** [https://novastore-pearl.vercel.app/](https://novastore-pearl.vercel.app/)
 
----
+## Features
 
-##  Features
+- **Home Page** – Hero section, product categories, and featured products.
+- **Shop** – Browse products with search, category filters, sorting, and pagination.
+- **Product Details** – View product information, images, and related products.
+- **Shopping Cart** – Update quantities and keep cart items saved between sessions.
+- **Wishlist** – Add or remove favorite products with persistent storage.
+- **Checkout** – Multi-step checkout form for shipping and payment details.
+- **Orders** – View order history and order details.
+- **Authentication** – Login, registration, and protected routes.
+- **Responsive Design** – Layouts designed to work across different screen sizes.
 
-### Core
--  **Home Page** with hero, categories, and featured products
--  **Shop** with search, category filters, sort, and pagination
--  **Product Details** with image gallery and related products
--  **Cart** with quantity management and persistent state
--  **Wishlist** with toggle and persistence
--  **Checkout** with multi-step form (shipping + payment)
--  **Orders** with full history and details
--  **Auth** with login, register, and protected routes
-
-### Technical
--  **React 19** + **TypeScript** + **Vite**
--  **Custom CSS Modules** — no CSS frameworks
--  **TanStack Query** for server state
--  **Zustand** for global state
--  **React Hook Form** + **Zod** for forms
--  **React Router v7** with lazy loading
--  **Vitest** + **React Testing Library**
-
----
-
-##  Tech Stack
+## Tech Stack
 
 | Category | Technology |
 |---|---|
-| **Framework** | React 19 |
-| **Language** | TypeScript |
-| **Build** | Vite |
-| **Styling** | CSS Modules + Custom Design System |
-| **Routing** | React Router v7 |
-| **State (Client)** | Zustand + persist |
-| **State (Server)** | TanStack Query |
-| **Forms** | React Hook Form + Zod |
-| **HTTP** | Axios + Interceptors |
-| **Icons** | Lucide React |
-| **Testing** | Vitest + React Testing Library |
-| **Deployment** | Vercel |
+| Frontend | React 19, TypeScript |
+| Build Tool | Vite |
+| Styling | CSS Modules, CSS Variables |
+| Routing | React Router v7 |
+| Client State | Zustand |
+| Server State | TanStack Query |
+| Forms & Validation | React Hook Form, Zod |
+| HTTP Requests | Axios |
+| Icons | Lucide React |
+| Testing | Vitest, React Testing Library |
+| Deployment | Vercel |
 
----
-
-##  Getting Started
+## Getting Started
 
 ### Prerequisites
-- Node.js 18+
-- npm or pnpm
+
+- Node.js
+- npm
 
 ### Installation
 
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/developer-mahmoud-sulaiman/novastore.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd novastore
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Configure the environment variables if required. Create a `.env` file in the project root and add the variables used by the application.
+
+5. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+6. Open the local URL displayed in your terminal.
+
+## Available Scripts
+
 ```bash
-# Clone the repo
-git clone https://github.com/USERNAME/novastore.git
-cd novastore
-
-# Install dependencies
-npm install
-
-# Copy environment variables
-cp .env.example .env
-
-# Start dev server
 npm run dev
+npm run build
+npm run lint
+npm run test:run
+```
 
+- `dev` – Start the development server.
+- `build` – Run TypeScript checks and build the application for production.
+- `lint` – Check the code for linting issues.
+- `test:run` – Run the test suite.
 
-Design System
-The project uses CSS Variables as design tokens for a consistent design:
+## Design System
 
-Colors: Slate-based with one amber accent
+The project uses CSS variables to keep the UI styling consistent across components.
 
-Typography: Inter (Google Fonts)
+- **Colors:** Slate-based palette with an amber accent.
+- **Typography:** Inter.
+- **Spacing:** Consistent 4px-based scale.
+- **Components:** Reusable UI components styled with CSS Modules.
 
-Spacing: 4px scale
+Design tokens are defined in `src/styles/variables.css`.
 
-Radius: Rounded corners, no sharp edges
+## Author
 
-Shadows: Subtle, used sparingly
+**Mahmoud Sulaiman**
 
-All design tokens live in src/styles/variables.css.
+- GitHub: [@developer-mahmoud-sulaiman](https://github.com/developer-mahmoud-sulaiman)
+- LinkedIn: [@developer-mahmoud-sulaiman](https://www.linkedin.com/in/developer-mahmoud-sulaiman/)
 
-📄 License
-This project is open source and available under the MIT License.
+## License
 
-Author
-[Mahmoud Sulaiman]
-
-GitHub: @developer-mahmoud-sulaiman
-
-LinkedIn: @developer-mahmoud-sulaiman
+This project is licensed under the MIT License.

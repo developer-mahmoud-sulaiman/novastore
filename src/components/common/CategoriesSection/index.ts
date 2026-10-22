@@ -1,1 +1,1 @@
-export {default} from './CategoriesSection'
+export { default } from "./CategoriesSection";

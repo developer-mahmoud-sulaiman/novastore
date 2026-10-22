@@ -1,2 +1,2 @@
-export * from './formatPrice'
-export * from './generateOrderId'
+export * from "./formatPrice";
+export * from "./generateOrderId";

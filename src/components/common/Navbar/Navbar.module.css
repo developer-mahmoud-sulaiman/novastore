@@ -1,141 +1,188 @@
-.navbar
-{
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 64px;
-    gap: var(--space-4);
+.navbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  gap: var(--space-4);
 }
 
-.left 
-{
-    display: flex;
-    align-items: center;
-    gap: var(--space-3);
+.left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
 }
 
-.menuToggle
-{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: var(--radius-md);
-    color: var(--color-text);
+.menuToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  color: var(--color-text);
 }
 
-.menuToggle:hover 
-{
-    background-color: var(--color-bg-subtle);
+.menuToggle:hover {
+  background-color: var(--color-bg-subtle);
 }
 
-.logo 
-{
-    font-size: var(--text-xl);
-    font-weight: var(--font-bold);
-    letter-spacing: -0.02em;
+.logo {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  letter-spacing: -0.02em;
 }
 
-.links 
-{
+.links {
+  display: none;
+  gap: var(--space-8);
+}
+
+.links a {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+}
+
+.links a:hover {
+  color: var(--color-text);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.iconBtn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  transition: background-color var(--transition-fast);
+}
+
+.iconBtn:hover {
+  background-color: var(--color-bg-subtle);
+}
+
+.badge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  min-width: 18px;
+  height: 18px;
+  padding-inline: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: var(--font-semibold);
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-md);
+}
+
+.mobileMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-4);
+  background-color: var(--color-bg);
+  border-bottom: 1px soild var(--color-border);
+  box-shadow: var(--shadow-md);
+}
+
+.mobileMenu a {
+  padding: var(--space-3);
+  font-size: var(--text-base);
+  font-weight: var(--font-medium);
+  border-radius: var(--radius-md);
+}
+
+@media (min-width: 768px) {
+  .menuToggle {
     display: none;
-    gap: var(--space-8);
-}
-
-.links a
-{
-    font-size: var(--text-sm);
-    font-weight: var(--font-medium);
-    color: var(--color-text-muted);
-    transition: color var(--transition-fast);
-}
-
-.links a:hover 
-{
-    color: var(--color-text);
-}
-
-.actions 
-{
+  }
+  .links {
     display: flex;
-    align-items: center;
-    gap: var(--space-1);
+  }
+  .mobileMenu {
+    display: none;
+  }
 }
 
-.iconBtn 
-{
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: var(--radius-md);
-    color: var(--color-text);
-    transition: background-color var(--transition-fast);
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  border: 1px solid var(--color-border);
 }
 
-.iconBtn:hover 
-{
-    background-color: var(--color-bg-subtle);
+.searchPanel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+  z-index: var(--z-dropdown);
 }
 
-.badge 
-{
-    position: absolute;
-    top: 2px;
-    right: 2px;
-    min-width: 18px;
-    height: 18px;
-    padding-inline: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 10px;
-    font-weight: var(--font-semibold);
-    color: var(--color-white);
-    background-color: var(--color-primary);
-    border-radius: var(--radius-full);
-    box-shadow: var(--shadow-md);
+.searchIcon {
+  position: absolute;
+  left: calc(var(--space-4) + var(--space-3));
+  color: var(--color-text-muted);
+  pointer-events: none;
 }
 
-.mobileMenu
-{
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-1);
-    padding: var(--space-4);
-    background-color: var(--color-bg);
-    border-bottom: 1px soild var(--color-border);
-    box-shadow: var(--shadow-md);
+.searchInput {
+  flex: 1;
+  height: 44px;
+  padding: 0 var(--space-3) 0 calc(var(--space-3) + 18px + var(--space-3));
+  font-size: var(--text-sm);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
 }
 
-.mobileMenu a 
-{
-    padding: var(--space-3);
-    font-size: var(--text-base);
-    font-weight: var(--font-medium);
-    border-radius: var(--radius-md);
+.searchInput:focus {
+  outline: none;
+  border-color: var(--color-primary);
 }
 
-@media (min-width: 768px)
-{
-    .menuToggle {display: none;}
-    .links {display: flex;}
-    .mobileMenu {display: none;}
+.searchSubmit {
+  height: 44px;
+  padding: 0 var(--space-5);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  border-radius: var(--radius-md);
 }
 
-.avatar
-{
-    width: 32px;
-    height: 32px;
-    border-radius: var(--radius-full);
-    object-fit: cover;
-    border: 1px solid var(--color-border);
+.searchSubmit:hover {
+  background-color: var(--color-primary-hover);
+}
+
+@media (max-width: 480px) {
+  .searchSubmit {
+    display: none;
+  }
 }

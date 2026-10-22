@@ -1,0 +1,42 @@
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8);
+  text-align: center;
+  gap: var(--space-4);
+}
+
+.icon {
+  color: var(--color-error);
+}
+
+.title {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+}
+
+.message {
+  color: var(--color-text-muted);
+  max-width: 500px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 0 var(--space-6);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--color-primary-hover);
+}

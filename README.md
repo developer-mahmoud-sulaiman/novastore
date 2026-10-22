@@ -1,75 +1,97 @@
-# React + TypeScript + Vite
+#  NovaStore
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, production-ready e-commerce storefront built with React, TypeScript, and Vite.
 
-Currently, two official plugins are available:
+** Live Demo:** [novastore.vercel.app](https://novastore.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+##  Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Core
+-  **Home Page** with hero, categories, and featured products
+-  **Shop** with search, category filters, sort, and pagination
+-  **Product Details** with image gallery and related products
+-  **Cart** with quantity management and persistent state
+-  **Wishlist** with toggle and persistence
+-  **Checkout** with multi-step form (shipping + payment)
+-  **Orders** with full history and details
+-  **Auth** with login, register, and protected routes
 
-## Expanding the ESLint configuration
+### Technical
+-  **React 19** + **TypeScript** + **Vite**
+-  **Custom CSS Modules** — no CSS frameworks
+-  **TanStack Query** for server state
+-  **Zustand** for global state
+-  **React Hook Form** + **Zod** for forms
+-  **React Router v7** with lazy loading
+-  **Vitest** + **React Testing Library**
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+##  Tech Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+| Category | Technology |
+|---|---|
+| **Framework** | React 19 |
+| **Language** | TypeScript |
+| **Build** | Vite |
+| **Styling** | CSS Modules + Custom Design System |
+| **Routing** | React Router v7 |
+| **State (Client)** | Zustand + persist |
+| **State (Server)** | TanStack Query |
+| **Forms** | React Hook Form + Zod |
+| **HTTP** | Axios + Interceptors |
+| **Icons** | Lucide React |
+| **Testing** | Vitest + React Testing Library |
+| **Deployment** | Vercel |
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
 
-```
+##  Getting Started
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+### Prerequisites
+- Node.js 18+
+- npm or pnpm
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Installation
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+# Clone the repo
+git clone https://github.com/USERNAME/novastore.git
+cd novastore
 
-```
+# Install dependencies
+npm install
+
+# Copy environment variables
+cp .env.example .env
+
+# Start dev server
+npm run dev
+
+
+Design System
+The project uses CSS Variables as design tokens for a consistent design:
+
+Colors: Slate-based with one amber accent
+
+Typography: Inter (Google Fonts)
+
+Spacing: 4px scale
+
+Radius: Rounded corners, no sharp edges
+
+Shadows: Subtle, used sparingly
+
+All design tokens live in src/styles/variables.css.
+
+📄 License
+This project is open source and available under the MIT License.
+
+Author
+[Mahmoud Sulaiman]
+
+GitHub: @developer-mahmoud-sulaiman
+
+LinkedIn: @developer-mahmoud-sulaiman

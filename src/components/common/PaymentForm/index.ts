@@ -1,1 +1,1 @@
-export {default} from './PaymentForm.module.css'
+export { default } from "./PaymentForm.module.css";

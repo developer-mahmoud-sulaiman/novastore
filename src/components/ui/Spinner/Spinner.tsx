@@ -1,17 +1,18 @@
-import styles from './Spinner.module.css'
-
+import styles from "./Spinner.module.css";
 
 interface SpinnerProps {
-    size?: number;
+  size?: number;
 }
 
-
-
-function Spinner({size = 24} : SpinnerProps) {
-
-    return(
-        <div className={styles.Spinner} style={{width: size, height: size}} role='status' arei-label='loading' />
-    )
+function Spinner({ size = 24 }: SpinnerProps) {
+  return (
+    <div
+      className={styles.Spinner}
+      style={{ width: size, height: size }}
+      role="status"
+      arei-label="loading"
+    />
+  );
 }
 
-export default Spinner
+export default Spinner;

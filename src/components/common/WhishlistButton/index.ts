@@ -1,1 +1,1 @@
-export {default} from './WishlistButton.tsx'
+export { default } from "./WishlistButton.tsx";

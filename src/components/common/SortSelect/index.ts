@@ -1,1 +1,1 @@
-export {default} from './SortSelect'
+export { default } from "./SortSelect";

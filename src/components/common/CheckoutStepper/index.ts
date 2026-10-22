@@ -1,1 +1,1 @@
-export {default} from './CheckoutStepper'
+export { default } from "./CheckoutStepper";

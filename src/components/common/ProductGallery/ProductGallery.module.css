@@ -1,81 +1,69 @@
-.gallery
-{
-    display: flex;
-    flex-direction: column-reverse;
-    gap: var(--space-4);
+.gallery {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: var(--space-4);
 }
 
-@media (min-width: 768px)
-{
-    .gallery
-    {
-        flex-direction: row;
-    }
-}
-
-.thumbs
-{
-    display: flex;
+@media (min-width: 768px) {
+  .gallery {
     flex-direction: row;
-    gap: var(--space-2);
-    overflow-x: auto;
+  }
 }
 
-@media (min-width: 768px)
-{
-    .thumbs
-    {
-        flex-direction: column;
-        overflow: visible;
-        flex-shrink: 0;
-    }
+.thumbs {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-2);
+  overflow-x: auto;
 }
 
-.thumb
-{
+@media (min-width: 768px) {
+  .thumbs {
+    flex-direction: column;
+    overflow: visible;
     flex-shrink: 0;
-    width: 72px;
-    height: 72px;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    overflow: hidden;
-    background-color: var(--color-bg-subtle);
-    padding: var(--space-1);
-    transition: border-color var(--transition-fast);
+  }
 }
 
-.thumb img 
-{
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+.thumb {
+  flex-shrink: 0;
+  width: 72px;
+  height: 72px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background-color: var(--color-bg-subtle);
+  padding: var(--space-1);
+  transition: border-color var(--transition-fast);
 }
 
-.thumb:hover
-{
-    border-color: var(--color-gray-400);
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
-.active
-{
-    border-color: var(--color-primary);
-    border-width: 2px;
+.thumb:hover {
+  border-color: var(--color-gray-400);
 }
 
-.main
-{
-    flex: 1;
-    aspect-ratio: 1 / 1;
-    background-color: var(--color-bg-subtle);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    padding: var(--space-6);
+.active {
+  border-color: var(--color-primary);
+  border-width: 2px;
 }
 
-.mainImage
-{
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+.main {
+  flex: 1;
+  aspect-ratio: 1 / 1;
+  background-color: var(--color-bg-subtle);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  padding: var(--space-6);
+}
+
+.mainImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }

@@ -1,5 +1,5 @@
 
-import { ShoppingBag } from 'lucide-react';
+import { ShoppingBag, Star } from 'lucide-react';
 import styles from './ProductCard.module.css'
 import { Link } from 'react-router-dom';
 import type { Product } from '../../../types/Product';
@@ -49,7 +49,9 @@ function ProductCard({product} : ProductCardProps)
                 {
                     rating && (
                         <div className={styles.rating}>
-                            <span className={styles.stars}>*</span>
+                            <span className={styles.stars}>
+                                <Star size={16} />
+                            </span>
                             <span>{rating.toFixed(1)}</span>
                         </div>
                     )

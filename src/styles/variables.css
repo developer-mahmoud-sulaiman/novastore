@@ -68,19 +68,19 @@
     --radius-full: 9999px;
 
     --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow-md: 0 4px 6px -1 rgb(0 0 0 / 0.1);
-    --shadow-lg: 0 10px 15px -3 rgb(0 0 0 / 0.1);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
 
     --container-max: 1280px;
     --container-pad: var(--space-4);
 
     --transition-fast: 150ms ease;
-    --transition-base: 150ms ease;
+    --transition-base: 250ms ease;
 
-    --z-dropdow: 1000;
-    --z-sticky : 1020;
-    --z-modal  : 1050;
-    --z-toast  : 1080;
+    --z-dropdown: 1000;
+    --z-sticky  : 1020;
+    --z-modal   : 1050;
+    --z-toast   : 1080;
 
 
 }

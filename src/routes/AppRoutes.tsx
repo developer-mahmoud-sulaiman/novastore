@@ -55,7 +55,7 @@ function AppRoutes()
                     <Route path="/checkout" element={<CheckoutPage />} />
                     <Route path="/account" element={<AccountPage />} />
                     <Route path="/orders" element={<OrderPage />} />
-                    <Route path="//orders/:id" element={<OrderDetailsPage />} />
+                    <Route path="/orders/:id" element={<OrderDetailsPage />} />
 
                 </Route>
                 {/* Prodtected Routes */}

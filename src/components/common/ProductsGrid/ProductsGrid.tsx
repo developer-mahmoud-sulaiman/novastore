@@ -15,8 +15,6 @@ function ProductsGrid({
     products,
     isLoading = false,
     skeltonCount = 8,
-    onAddToCart,
-    onToggleWishlist,
 } : ProductsGridProps)
 {
     if(isLoading)
@@ -49,11 +47,11 @@ function ProductsGrid({
         <div className={styles.grid}>
             {
                 products.map((product) => (
-                    <ProductCard key={product.id} product={product} onAddToCart={onAddToCart} onToggleWishlist={onToggleWishlist} />
+                    <ProductCard key={product.id} product={product}/>
                 ))
             }
         </div>
     )
 }
 
-export default ProductsGrid
+export default ProductsGrid 

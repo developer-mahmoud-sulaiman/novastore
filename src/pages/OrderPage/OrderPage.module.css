@@ -37,6 +37,8 @@
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
     transition: border-color var(--transition-fast);
+    text-decoration: none;
+    color: inherit;
 }
 
 .card:hover
@@ -73,6 +75,7 @@
     align-items: center;
     justify-content: space-between;
     gap: var(--space-4);
+    min-width: 0;
 }
 
 .thumbnails
@@ -89,6 +92,7 @@
     background-color: var(--color-bg-subtle);
     border-radius: var(--radius-md);
     padding: var(--space-1);
+    flex-shrink: 0;
 }
 
 .more
@@ -103,6 +107,7 @@
     color: var(--color-text-muted);
     background-color: var(--color-bg-subtle);
     border-radius: var(--radius-md);
+    flex-shrink: 0;
 }
 
 .total
@@ -142,7 +147,7 @@
     color: var(--color-text-muted);
 }
 
-.shopBtn
+.shopBtn 
 {
     display: inline-flex;
     align-items: center;

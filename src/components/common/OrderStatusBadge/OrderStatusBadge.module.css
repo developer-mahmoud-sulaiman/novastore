@@ -7,6 +7,8 @@
     font-weight: var(--font-medium);
     border-radius: var(--radius-full);
     border: 1px solid;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .pending
@@ -24,7 +26,7 @@
 }
 
 .shipped
-{
+{ 
     color: #7c3aed;
     background-color: #ede9fe;
     border-color: #ddd6fe;

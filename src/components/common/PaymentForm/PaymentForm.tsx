@@ -22,8 +22,8 @@ function PaymentForm({onSubmit, onBack, isLoading}: PaymentFormProps) {
             <FormField label="Card Number" htmlFor="cardNumber" 
             error={errors.cardNumber?.message}>
 
-                <input id="cardNumber" placeholder="1234 5678 9012 3456" maxLength={16} hasError={!!errors.cardNumber} 
-                {...register('cardNumber')} />
+                <input id="cardNumber" placeholder="1234 5678 9012 3456" maxLength={16} aria-invalid={!!errors.cardNumber} 
+                {...register('cardNumber')} className={styles.input}  />
 
             </FormField>
 
@@ -31,8 +31,8 @@ function PaymentForm({onSubmit, onBack, isLoading}: PaymentFormProps) {
             error={errors.cardHolder?.message}>
 
                 <input id="cardHolder" placeholder="John Doe"
-                hasError={!!errors.cardHolder} 
-                {...register('cardHolder')} />
+                aria-invalid={!!errors.cardHolder} 
+                {...register('cardHolder')} className={styles.input}  />
 
             </FormField>
 
@@ -41,8 +41,8 @@ function PaymentForm({onSubmit, onBack, isLoading}: PaymentFormProps) {
                 <FormField label="Expiry (MM/YY)" htmlFor="expiry" 
                 error={errors.expiry?.message}>
 
-                    <input id="expiry" placeholder="12/26" maxLength={5} hasError={!!errors.expiry} 
-                    {...register('expiry')} />
+                    <input id="expiry" placeholder="12/26" maxLength={5} aria-invalid={!!errors.expiry} 
+                    {...register('expiry')} className={styles.input} />
 
                 </FormField>
 
@@ -50,8 +50,8 @@ function PaymentForm({onSubmit, onBack, isLoading}: PaymentFormProps) {
                 error={errors.cvv?.message}>
 
                     <input id="cvv" placeholder="123" maxLength={4}
-                    hasError={!!errors.cvv} 
-                    {...register('cvv')} />
+                    aria-invalid={!!errors.cvv} 
+                    {...register('cvv')} className={styles.input}  />
 
                 </FormField>
 

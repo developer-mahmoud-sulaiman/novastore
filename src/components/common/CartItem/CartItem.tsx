@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import styles from './CartItem.module.css'
 import {formatPrice} from '../../../utils/formatPrice'
-import QuantitySelector from '../../common/QuantitySelector/QuantitySelector'
+import QuantitySelector from '../QuantitySelector/QuantitySelector'
 import { Trash2 } from 'lucide-react';
 import type { CartItem as CartItemType } from "../../../store/cartStore";
 
@@ -10,7 +10,7 @@ interface CartItemProps {
     onIncrease: (id: number) => void;
     onDecrease: (id: number) => void;
     onRemove: (id: number) => void;
-}
+} 
 
 function CartItem({item, onIncrease, onDecrease, onRemove} : CartItemProps) {
 

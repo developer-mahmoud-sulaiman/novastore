@@ -25,8 +25,21 @@ function Footer()
                         <ul>
 
                             <li><Link to="/shop">All Products</Link></li>
-                            <li><Link to="/shop?category=electronics">Electronics</Link></li>
-                            <li><Link to="/shop?category=jewelery">Jewelery</Link></li>
+                            <li>
+                                <Link to="/shop?category=smartphones">
+                                    Smartphones
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/shop?category=furniture">
+                                    Furniture
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/shop?category=home-decoration">
+                                    Home Decoration
+                                </Link>
+                            </li>
 
                         </ul>
 
@@ -36,8 +49,10 @@ function Footer()
 
                         <h4>Company</h4>
                         <ul>
-                            <li><Link to="#">About</Link></li>
-                            <li><Link to="#">Contact</Link></li>
+                            <li><Link to="/">Home</Link></li>
+                            <li><Link to="/about">About</Link></li>
+                            <li><Link to="/contact">Contact</Link></li>
+                            <li><Link to="/shop">Shop</Link></li>
                         </ul>
 
                     </div>
@@ -46,8 +61,10 @@ function Footer()
 
                         <h4>Support</h4>
                         <ul>
-                            <li><Link to="#">My Orders</Link></li>
-                            <li><Link to="#">Account</Link></li>
+                            <li><Link to="/orders">My Orders</Link></li>
+                            <li><Link to="/account">Account</Link></li>
+                            <li><Link to="/card">My Cart</Link></li>
+                            <li><Link to="/wishlist">My Wishlist</Link></li>
                         </ul>
 
                     </div>

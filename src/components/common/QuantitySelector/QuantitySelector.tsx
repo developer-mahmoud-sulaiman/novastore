@@ -20,7 +20,7 @@ function QuantitySelector({
             </button>
 
             <span className={styles.value} aria-live='polite'>
-
+                {value}
             </span>
 
             <button className={styles.btn} onClick={onIncrease} disabled={value >= max} aria-label='Increase Quantity' >

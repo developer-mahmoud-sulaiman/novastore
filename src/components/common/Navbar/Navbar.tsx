@@ -99,10 +99,10 @@ function Navbar()
 
             {
                 isMenuOpen && (
-                    <ul className={styles.mobilemenu}>
+                    <ul className={styles.mobileMenu}>
 
                         <li>
-                            <Link to="/home" onClick={toggleMenu}>Home</Link>
+                            <Link to="/" onClick={toggleMenu}>Home</Link>
                         </li>
                         <li>
                             <Link to="/shop" onClick={toggleMenu}>Shop</Link>

@@ -64,5 +64,13 @@ export const productsService =
     {
         const {data} = await api.get<ProductCategory[]>('/products/categories')
         return data
+    },
+
+    async getRelated(category: string, excludeId: number, limit = 4): Promise<Product[]> {
+        const {data} = await api.get<ProductResponse>(`/products/category/${category}`, {
+            params: {limit: limit + 1},
+        });
+
+        return data.products.filter((p) => p.id !== excludeId).slice(0, limit)
     }
 }

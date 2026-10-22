@@ -204,7 +204,7 @@
     background-color: var(--color-primary);
     border-radius: var(--radius-md);
 }
-
+ 
 .continueBtn:hover
 {
     background-color: var(--color-primary-hover);

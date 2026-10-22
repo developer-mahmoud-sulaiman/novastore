@@ -14,7 +14,7 @@ export type LoginFormData = z.infer<typeof loginScema>;
 
 export const registerSchema = z.object({
     firstName: z.string().min(2, 'First name must be at least 2 characters'),
-    LastName: z.string().min(2, 'Last name must be at least 2 characters'),
+    lastName: z.string().min(2, 'Last name must be at least 2 characters'),
     email: z.string().email('Invalid Email address'),
     username: z.string().min(3, 'User name must be at least 3 characters'),
     password: z
@@ -22,9 +22,9 @@ export const registerSchema = z.object({
     .min(8, 'Password must be at least 8 charachters')
     .regex(/[A-Z]/, 'Must contain uppercase letters')
     .regex(/[0-9]/, 'Must contain a number'),
-    confirmationPassword: z.string()
+    confirmPassword: z.string()
 })
-.refine((data) => data.password === data.confirmationPassword, {
+.refine((data) => data.password === data.confirmPassword, {
     message: 'Password don not match',
     path: ['confirmationPassword']
 })
@@ -47,9 +47,18 @@ export const paymentSchema = z.object({
     cvv: z.string().regex(/^\d{3,4}$/, 'Cvv must be 3-4 digits')
 })
 
+export const contactSchema = z.object({
+    name: z.string().min(2, 'Name is required'),
+    email: z.string().email('Invalid email'),
+    subject: z.string().min(3, 'Subject is required'),
+    message: z.string().min(20, 'Message must be at least 20 charachters'),
+})
+
 
 export type ShippingFormData = z.infer<typeof shippingSchema>
 
 export type RegisterFormData = z.infer<typeof registerSchema>
 
 export type PaymentFormData  = z.infer<typeof paymentSchema>
+
+export type ContactFormData = z.infer<typeof contactSchema>

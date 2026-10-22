@@ -10,7 +10,7 @@ interface ContainerProps
 function Container({children, className} : ContainerProps)
 {
     return (
-        <div className={`${styles.Container} ${className ?? '' }`}>
+        <div className={`${styles.container} ${className ?? '' }`}>
             {children}
         </div>
     )

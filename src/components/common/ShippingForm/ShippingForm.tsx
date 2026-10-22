@@ -24,16 +24,16 @@ function ShippingForm({defaultValues, onSubmit}: ShippingFormProps) {
                 <FormField label="First Name" htmlFor="firstName" 
                 error={errors.firstName?.message}>
 
-                    <input id="firstName" hasError={!!errors.firstName} 
-                    {...register('firstName')} />
+                    <input id="firstName" aria-invalid={!!errors.firstName} 
+                    {...register('firstName')} className={styles.input} />
 
                 </FormField>
 
                 <FormField label="Last Name" htmlFor="lastName" 
-                error={errors.firstName?.message}>
+                error={errors.lastName?.message}>
 
-                    <input id="lastName" hasError={!!errors.lastName} 
-                    {...register('lastName')} />
+                    <input id="lastName" aria-invalid={!!errors.lastName} 
+                    {...register('lastName')} className={styles.input} />
 
                 </FormField>
         
@@ -44,16 +44,16 @@ function ShippingForm({defaultValues, onSubmit}: ShippingFormProps) {
                 <FormField label="Email" htmlFor="email" 
                 error={errors.email?.message}>
 
-                    <input id="email" hasError={!!errors.email} type="email"
-                    {...register('email')} />
+                    <input id="email" aria-invalid={!!errors.email} type="email"
+                    {...register('email')} className={styles.input} />
 
                 </FormField>
 
                 <FormField label="Phone" htmlFor="phone" 
-                error={errors.email?.message}>
+                error={errors.phone?.message}>
 
-                    <input id="phone" hasError={!!errors.phone} type="tel"
-                    {...register('phone')} />
+                    <input id="phone" aria-invalid={!!errors.phone} type="tel"
+                    {...register('phone')} className={styles.input} />
 
                 </FormField>
         
@@ -62,8 +62,8 @@ function ShippingForm({defaultValues, onSubmit}: ShippingFormProps) {
             <FormField label="Address" htmlFor="address" 
                 error={errors.address?.message}>
 
-                    <input id="address" hasError={!!errors.address}
-                    {...register('address')} />
+                    <input id="address" aria-invalid={!!errors.address}
+                    {...register('address')} className={styles.input} />
 
             </FormField>
 
@@ -73,16 +73,16 @@ function ShippingForm({defaultValues, onSubmit}: ShippingFormProps) {
                 <FormField label="City" htmlFor="city" 
                 error={errors.city?.message}>
 
-                    <input id="city" hasError={!!errors.city}
-                    {...register('city')} />
+                    <input id="city" aria-invalid={!!errors.city}
+                    {...register('city')} className={styles.input} />
 
                 </FormField>
 
                 <FormField label="Postal Code" htmlFor="postalCode" 
                 error={errors.postalCode?.message}>
 
-                    <input id="postalCode" hasError={!!errors.postalCode}
-                    {...register('postalCode')} />
+                    <input id="postalCode" aria-invalid={!!errors.postalCode}
+                    {...register('postalCode')} className={styles.input} />
 
                 </FormField>
         
@@ -91,13 +91,13 @@ function ShippingForm({defaultValues, onSubmit}: ShippingFormProps) {
             <FormField label="Country" htmlFor="country" 
                 error={errors.country?.message}>
 
-                    <input id="country" hasError={!!errors.country}
-                    {...register('country')} />
+                    <input id="country" aria-invalid={!!errors.country}
+                    {...register('country')} className={styles.input} />
 
             </FormField>
 
             <Button type="submit" size="lg" fullWidth>
-                Continue to payment
+                Continue to payment 
             </Button>
 
         </form>

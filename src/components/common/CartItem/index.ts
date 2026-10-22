@@ -1,1 +1,1 @@
-export {default} from './CartItem.module.css'
+export {default} from './CartItem'

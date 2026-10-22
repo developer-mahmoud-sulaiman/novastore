@@ -57,11 +57,11 @@ function AccountPage()
                     <LogOut size={16} /> Sign out
                 </Button>
 
-            </aside>
+            </aside> 
 
-            <div className={styles.content}>
+            <div>
                 <div className={styles.infoCard}>
-                    <h3 className={styles.infotitle}>Account Information</h3>
+                    <h3 className={styles.infoTitle}>Account Information</h3>
 
                     <div className={styles.infoRow}>
                         <span className={styles.infoLabel}>Username</span>

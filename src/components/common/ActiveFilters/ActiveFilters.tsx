@@ -1,12 +1,12 @@
 import { X } from 'lucide-react';
-import styles from './ActiveFilters.tsx.module.css'
+import styles from './ActiveFilters.module.css'
 
 interface ActiveFiltersProps
 {
     filters: {
         q?: string;
         category?: string;
-        sort?: string;
+        sort?: string; 
     };
     onClear: () => void
 }
@@ -25,13 +25,12 @@ function ActiveFilters({filters, onClear}: ActiveFiltersProps)
             {
                 items.map(([Key, value]) => (
                     <span key={Key} className={styles.chip}>
-                        {Key}: <strong>{value}</strong>
+                        {Key === 'q' ? 'Search' : Key === 'category' ? 'Category' : 'Sort'}: <strong>{value}</strong>
                     </span>
                 ))
             }
 
-            <button className={styles.clear} onClick={onClear}>
-                <X size={14} /> Clear All
+            <button type="button" className={styles.clear} onClick={onClear}>   <X size={14} /> Clear All
             </button>
 
         </div>

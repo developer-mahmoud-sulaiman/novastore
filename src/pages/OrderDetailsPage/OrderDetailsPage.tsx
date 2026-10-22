@@ -28,7 +28,7 @@ function OrderDetailsPage()
         )
     }
 
-    return(
+    return( 
     <Container>
 
         <div className={styles.success}>
@@ -44,7 +44,7 @@ function OrderDetailsPage()
             <div>
                 <h2 className={styles.orderId}>{order.id}</h2>
                 <p className={styles.date}>
-                    {new Date(order.createdAt).toLocaleDateString('en-Us', {
+                    {new Date(order.createdAt).toLocaleDateString('en-US', {
                         year: 'numeric',
                         month: 'short',
                         day: 'numeric'
@@ -68,10 +68,10 @@ function OrderDetailsPage()
                                     alt={item.title} 
                                     className={styles.itemImage} />
                                     <div className={styles.itemInfo}>
-                                        <p className={styles.itemtitle}>      {item.title}
+                                        <p className={styles.itemTitle}>      {item.title}
                                         </p>
                                         <p className={styles.itemMeta}>
-                                            {formatPrice(item.price)} * {item.quantity}
+                                            {formatPrice(item.price)} × {item.quantity}
                                         </p>
                                     </div>
                                     <p className={styles.itemTotal}>

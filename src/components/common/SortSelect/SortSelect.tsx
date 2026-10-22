@@ -16,7 +16,7 @@ const SORT_OPTIONS: SortOption[] = [
 ]
 
 interface SortSelectProps
-{
+{ 
     value: string;
     onChange: (value: string) => void
 }

@@ -1,3 +1,4 @@
+
 import { Link, useNavigate } from "react-router-dom";
 import Container from "../../components/ui/Container";
 import styles from './RegisterPage.module.css'
@@ -9,8 +10,10 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import FormField from "../../components/ui/FormField";
 import Alert from "../../components/ui/Alert";
 import Button from "../../components/ui/Button";
+import api from '../../lib/axios';
 
 
+ 
 
 function RegisterPage()
 {
@@ -24,12 +27,11 @@ function RegisterPage()
         resolver: zodResolver(registerSchema)
     })
 
-    const onSubmit = async (data: RegisterFormData) => {
+    const onSubmit = async (_data: RegisterFormData) => {
         setError(null)
-        try 
+        try  
         {
-            const {api} = await import('../../lib/axios')
-            const {data: authData} = await api.post('./auth/login', {
+            const {data: authData} = await api.post('/auth/login', {
                 username: 'emilys',
                 password: 'emilyspass',
                 expiresInMins: 60
@@ -51,7 +53,7 @@ function RegisterPage()
         }
         catch (err)
         {
-            setError(err instanceof Error ? err.message: 'Registration Faild')
+            setError(err instanceof Error ? err.message: 'Registration Failed')
         }
     }
 
@@ -72,16 +74,20 @@ function RegisterPage()
 
                 <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
 
-                    <FormField label="First Name" htmlFor="firstName" error={errors.firstName?.message}>
-                        <input id="firstName" type="text" aria-invalid={!!errors.firstName} {...register('firstName')}/>
-                    </FormField>
+                    <div className={styles.row}>
+                        <FormField label="First Name" htmlFor="firstName" error={errors.firstName?.message}>
+                            <input id="firstName" type="text" aria-invalid={!!errors.firstName} {...register('firstName')} placeholder="John"/>
+                        </FormField>
 
-                    <FormField label="Last Name" htmlFor="lastName" error={errors.lastName?.message}>
-                        <input id="lastName" type="text"  aria-invalid={!!errors.lastName} {...register('lastName')} />
-                    </FormField>
+                        <FormField label="Last Name" htmlFor="lastName" error={errors.lastName?.message}>
+                            <input id="lastName" type="text"  aria-invalid={!!errors.lastName} {...register('lastName')} placeholder="Doe" />
+                        </FormField>
+                    </div>
 
-                    <FormField label="email" htmlFor="email" error={errors.email?.message}>
-                        <input id="email" type="email"  aria-invalid={!!errors.email} {...register('email')} />
+
+
+                    <FormField label="Email" htmlFor="email" error={errors.email?.message}>
+                        <input id="email" type="email"  aria-invalid={!!errors.email} {...register('email')} placeholder="john@mail.com" />
                     </FormField>
 
                     <FormField label="Username" htmlFor="username" error={errors.username?.message}>

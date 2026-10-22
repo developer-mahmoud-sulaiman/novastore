@@ -11,7 +11,7 @@
 {
     display: block;
 }
-
+ 
 .image
 {
     width: 100%;
@@ -76,7 +76,7 @@
 .total 
 {
     font-size: var(--text-lg);
-    font-weight: var(--text-bold);
+    font-weight: var(--font-bold);
     text-align: right;
     align-self: flex-start;
 }
@@ -91,5 +91,10 @@
     .total 
     {
         grid-column: 2;
+    }
+
+    .info 
+    {
+        min-width: 0;
     }
 }

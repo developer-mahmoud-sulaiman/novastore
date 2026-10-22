@@ -5,7 +5,7 @@
     align-items: center;
     width: 100%;
     height: 44px;
-    border:  1ps solid var(--color-border);
+    border:  1px solid var(--color-border);
     border-radius: var(--radius-md);
     background-color: var(--color-bg);
     transition: border-color var(--transition-fast);
@@ -19,7 +19,7 @@
 .icon 
 {
     position: absolute;
-    left: var(--space-3);
+    left: var(--space-3); 
     color: var(--color-text-muted);
     pointer-events: none;
 }

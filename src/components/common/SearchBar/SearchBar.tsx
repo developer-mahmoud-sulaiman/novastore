@@ -7,7 +7,7 @@ interface SearchBarProps
 {
     value: string;
     onChange: (value: string) => void;
-    placeholder: string
+    placeholder?: string
 }
 
 function SearchBar({value, onChange, placeholder = 'Search Products...'} : SearchBarProps)
@@ -36,7 +36,7 @@ function SearchBar({value, onChange, placeholder = 'Search Products...'} : Searc
 
             {
                 input && (
-                    <button className={styles.clear} onClick={handleClear} aria-label="Clear Search">
+                    <button type="button" className={styles.clear} onClick={handleClear} aria-label="Clear Search">
                         <X size={16} /> 
 
                     </button>

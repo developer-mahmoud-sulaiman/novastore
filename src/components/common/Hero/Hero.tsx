@@ -18,7 +18,7 @@ function Hero()
                         Discover products that fit your life.
                     </h1>
                     <p className={styles.subtitle}>
-                        Handpicked quality, honest prices, fast deleviry -- everything you need in one place
+                        Handpicked quality, honest prices, fast delivery -- everything you need in one place
                     </p>
 
                     <div className={styles.actions}>

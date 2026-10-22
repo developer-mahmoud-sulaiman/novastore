@@ -13,7 +13,7 @@ function OrderPage()
 
     if (orders.length === 0) {
         return(
-            <Container>
+            <Container> 
                 <div className={styles.empty}>
                     <Package size={48} strokeWidth={1.5} />
                     <h1>No orders yet</h1>
@@ -31,7 +31,9 @@ function OrderPage()
 
         <div className={styles.header}>
             <h1 className={styles.title}>My orders</h1>
-            <p className={styles.subtitle}>{orders.length}orders(s)</p>
+            <p className={styles.subtitle}>
+                {orders.length} {orders.length === 1 ? 'order' : 'orders' }
+            </p>
         </div>
 
         <div className={styles.list}>
@@ -43,7 +45,7 @@ function OrderPage()
                         <div>
                             <p className={styles.orderId}>{order.id}</p>
                             <p className={styles.date}>
-                                {new Date(order.createdAt).toLocaleDateString('en-Us', {
+                                {new Date(order.createdAt).toLocaleDateString('en-US', {
                                     year: 'numeric',
                                     month: 'short',
                                     day: 'numeric'
@@ -75,7 +77,9 @@ function OrderPage()
                         </div>
 
                         <div className={styles.total}>
-                            <span>{order.items.length} Item(s)</span>
+                            <span>
+                                {order.items.reduce((total, item) => total + item.quantity, 0)} Items
+                            </span>
                             <strong>{formatPrice(order.total)}</strong>
                         </div>
 

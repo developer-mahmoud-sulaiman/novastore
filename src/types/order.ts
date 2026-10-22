@@ -1,7 +1,7 @@
-export type OrderStatus = 'Pending' | 'Processing' | 'Shipped' | 'Delivered' | 'Cancelled'
+export type OrderStatus = 'pending' | 'processing' | 'shipped' | 'delivered' | 'cancelled'
 
 export interface OrderItem {
-    id: number;
+    id: number; 
     title: string;
     price: number;
     thumbnail: string;

@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Container from "../../components/ui/Container";
 import styles from '../CheckoutPage/CheckoutPage.module.css'
-import { useState } from "react";
+import { useState } from "react"; 
 import {type ShippingFormData, type PaymentFormData } from "../../lib";
 import { selectCartSubtotal, useAuthStore, useCartStore, useOrdersStore } from "../../store";
 import type { Order } from "../../types/order";
@@ -10,6 +10,7 @@ import CheckoutStepper from "../../components/common/CheckoutStepper";
 import ShippingForm from "../../components/common/ShippingForm";
 import PaymentForm from "../../components/common/PaymentForm/PaymentForm";
 import CartSumary from "../../components/common/CartSummary";
+import { useEffect } from "react";
 
 const STEPS = [
     {label: 'Shipping'},
@@ -30,10 +31,11 @@ function CheckoutPage()
     const addOrder = useOrdersStore((state) => state.addOrder)
     const user = useAuthStore((state) => state.user)
 
-    if (items.length === 0) {
-        navigate('/cart')
-        return null
-    }
+    useEffect(() => {
+        if (items.length === 0) navigate('/cart', { replace: true });
+    }, [items.length, navigate]);
+
+    if (items.length === 0) return null;
 
     const handleShippingSubmit = (data: ShippingFormData) => {
         setShippingData(data)
@@ -61,7 +63,7 @@ function CheckoutPage()
             shipping_cost: shippingCost,
             tax,
             total: subtotal + shippingCost + tax,
-            status: 'Pending',
+            status: 'pending',
             createdAt: new Date().toISOString(),
         }
 
@@ -78,7 +80,7 @@ function CheckoutPage()
 
         <div className={styles.header}>
             <h1 className={styles.title}>Checkout</h1>
-        </div>
+        </div> 
 
         <CheckoutStepper steps={STEPS} currentStep={step} />
 

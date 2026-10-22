@@ -26,7 +26,7 @@ function Button({variant = 'primary', size = 'md', fullWidth = false, loading = 
     .join(' ');
 
     return(
-        <button className={classes} disabled={disabled || loading} {...rest} >
+        <button className={classes} disabled={disabled || loading} {...rest} aria-busy={loading} >
             {loading ? 'Loading... ' : children}
         </button>
     )

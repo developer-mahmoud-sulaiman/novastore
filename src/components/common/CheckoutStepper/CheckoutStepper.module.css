@@ -27,6 +27,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
     width: 28px;
     height: 28px;
     font-size: var(--text-xs);
@@ -41,7 +42,7 @@
     background-color: var(--color-primary);
     color: var(--color-white);
     border-color: var(--color-primary);
-}
+} 
 
 .active .label
 {

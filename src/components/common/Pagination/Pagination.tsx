@@ -36,7 +36,7 @@ function Pagination({currentPage, totalPages, onPageChange}: PaginationProps)
     return(
         <nav className={styles.wrapper} aria-label='Pagination'>
 
-            <button className={styles.arrow} onClick={() => onPageChange(currentPage - 1)} disabled={currentPage === 1} aria-label='Previous Page'>
+            <button type="button"  className={styles.arrow} onClick={() => onPageChange(currentPage - 1)} disabled={currentPage === 1} aria-label='Previous Page'>
                     <ChevronLeft size={18} />
             </button>
 
@@ -45,14 +45,14 @@ function Pagination({currentPage, totalPages, onPageChange}: PaginationProps)
                     p === '...' ? (
                         <span key={`dots-${i}`} className={styles.dots}>...</span>
                     ) : (
-                        <button key={p} className={`${styles.page} ${p === currentPage ? styles.active : ''}`} onClick={() => onPageChange(p)}>
+                        <button type="button" key={p} className={`${styles.page} ${p === currentPage ? styles.active : ''}`} onClick={() => onPageChange(p)}>
                             {p}
                         </button>
                     )
                 )
             }
 
-            <button className={styles.arrow} onClick={() => onPageChange(currentPage + 1)} disabled={currentPage === totalPages} aria-label='Next Page'>
+            <button type="button" className={styles.arrow} onClick={() => onPageChange(currentPage + 1)} disabled={currentPage === totalPages} aria-label='Next Page'>
                     <ChevronRight size={18} />
             </button>
 

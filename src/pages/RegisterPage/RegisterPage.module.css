@@ -4,20 +4,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-block: var(--space-10);
+    padding: var(--space-10) var(--space-4);
 }
 
 .card
 {
     width: 100%;
-    max-width: 480px;
+    max-width: 520px;
     padding: var(--space-8);
     background-color: var(--color-bg);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
     display: flex;
     flex-direction: column;
-    gap: var(--space-5);
+    gap: var(--space-6);
 }
 
 .header
@@ -29,32 +29,61 @@
 {
     font-size: var(--text-2xl);
     font-weight: var(--font-bold);
-    margin-bottom: var(--space-1);
+    line-height: 1.3;
+    margin-bottom: var(--space-2);
 }
 
 .subtitle
 {
     font-size: var(--text-sm);
     color: var(--color-text-muted);
+    line-height: 1.5;
 }
 
 .form
 {
     display: flex;
     flex-direction: column;
-    gap: var(--space-5);
+    gap: var(--space-4);
 }
 
 .row
 {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--space-4);
 }
 
-@media (max-width: 480px)
+.form input
 {
-    .row {grid-template-columns: 1fr;}
+    width: 100%;
+    min-width: 0;
+    height: 44px;
+    padding: 0 var(--space-3);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font: inherit;
+    font-size: var(--text-sm);
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form input::placeholder
+{
+    color: var(--color-text-muted);
+}
+
+.form input:focus
+{
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgb(0 0 0 / 0.06);
+}
+
+.form input[aria-invalid="true"]
+{
+    border-color: var(--color-error);
 }
 
 .footer
@@ -62,11 +91,37 @@
     text-align: center;
     font-size: var(--text-sm);
     color: var(--color-text-muted);
+    line-height: 1.6;
 }
 
 .footer a
 {
     font-weight: var(--font-medium);
-    color: var(--color-text);
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.footer a:hover
+{
     text-decoration: underline;
+}
+
+@media (max-width: 480px)
+{
+    .wrapper
+    {
+        min-height: auto;
+        padding: var(--space-6) var(--space-3);
+    }
+
+    .card
+    {
+        padding: var(--space-5);
+        gap: var(--space-5);
+    }
+
+    .row
+    {
+        grid-template-columns: 1fr;
+    }
 }

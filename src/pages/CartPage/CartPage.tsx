@@ -14,7 +14,7 @@ function CartPage()
     const removeItem = useCartStore((state) => state.removeItem)
     const clearCart = useCartStore((state) => state.clearCart)
     const subtotal = useCartStore(selectCartSubtotal)
-
+ 
 
     if (items.length === 0 ) {
         return (

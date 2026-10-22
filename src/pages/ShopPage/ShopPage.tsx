@@ -7,11 +7,11 @@ import SortSelect from "../../components/common/SortSelect";
 import Container from "../../components/ui/Container";
 import { PAGE_SIZE, useCategories, useProducts } from "../../hooks";
 import { useShopFilters } from "../../hooks/useShopFilters";
-import styles from './ShopPage.module.css'
+import styles from './ShopPage.module.css' 
 
 function ShopPage()
 {
-    const {filters, setFilters, clearFilters, hasActiveFilters} = useShopFilters()
+    const {filters, setFilters, clearFilters, hasActiveFilter} = useShopFilters()
     const {data: categoriesData} = useCategories()
 
     const skip = (filters.page - 1) * PAGE_SIZE
@@ -46,7 +46,7 @@ function ShopPage()
 
             <div className={styles.toolbar}>
 
-                <SearchBar value={filters.q} onChange={(q) => setFilters({ q })} />
+                <SearchBar value={filters.q} onChange={(q) => setFilters({ q })} placeholder="Search products..."/>
 
                 <SortSelect value={filters.sort} onChange={(sort) => setFilters({ sort }) } />
 
@@ -83,9 +83,9 @@ function ShopPage()
                 !isLoading && products.length === 0 && !isError && (
                     <div className={styles.empty}>
 
-                        <p>No Products Matchs Your Filter</p>
+                        <p>No Products Match Your Filters</p>
                         {
-                            hasActiveFilters && (
+                            hasActiveFilter && (
                                 <button className={styles.clearBtn} onClick={clearFilters}>
                                     Clear Filters
                                 </button>

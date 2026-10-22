@@ -7,12 +7,12 @@ interface CartSummaryProps {
     taxRate?: number;
 }
 
-const FREE_SHIPPIING_THRESHOLD = 100;
+const FREE_SHIPPING_THRESHOLD = 100;
 const SHIPPING_COST = 10;
 const TAX_RATE = 0.14;
 
-function CartSumary({subtotal, shipping, taxRate = TAX_RATE}: CartSummaryProps) {
-    const calculatedShipping = shipping ?? (subtotal >= FREE_SHIPPIING_THRESHOLD ? 0 : SHIPPING_COST)
+function CartSummary({subtotal, shipping, taxRate = TAX_RATE}: CartSummaryProps) {
+    const calculatedShipping = shipping ?? (subtotal >= FREE_SHIPPING_THRESHOLD ? 0 : SHIPPING_COST)
 
     const tax = subtotal * taxRate
     const total = subtotal + calculatedShipping + tax
@@ -24,7 +24,7 @@ function CartSumary({subtotal, shipping, taxRate = TAX_RATE}: CartSummaryProps) 
 
             <div className={styles.row}>
 
-                <span>{subtotal}</span>
+                <span>Subtotal</span>
                 <span>{formatPrice(subtotal)}</span>
 
             </div>
@@ -61,9 +61,9 @@ function CartSumary({subtotal, shipping, taxRate = TAX_RATE}: CartSummaryProps) 
             </div>
 
             {
-                subtotal > 0 && subtotal < FREE_SHIPPIING_THRESHOLD && (
+                subtotal > 0 && subtotal < FREE_SHIPPING_THRESHOLD && (
                     <p className={styles.hint}>
-                        Add {formatPrice(FREE_SHIPPIING_THRESHOLD - subtotal)}more for free shipping! 
+                        Add {formatPrice(FREE_SHIPPING_THRESHOLD - subtotal)}   more for free shipping! 
                     </p>
                 )
             }
@@ -72,4 +72,4 @@ function CartSumary({subtotal, shipping, taxRate = TAX_RATE}: CartSummaryProps) 
     )
 }
 
-export default CartSumary
+export default CartSummary

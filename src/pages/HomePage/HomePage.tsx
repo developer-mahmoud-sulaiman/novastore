@@ -6,14 +6,14 @@ import styles from './HomePage.module.css'
 import { useProducts } from "../../hooks";
 import ProductsGrid from "../../components/common/ProductsGrid";
 
-
+ 
 
 function HomePage()
 {
 
   const {data, isLoading, isError, error} = useProducts({limit: 8})
 
-    return (
+    return ( 
         <>
             <Hero />
             <CategoriesSection />
